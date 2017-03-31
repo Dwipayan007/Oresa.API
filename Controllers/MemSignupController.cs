@@ -13,6 +13,7 @@ using System.Web.ModelBinding;
 namespace oresa.API.Controllers
 {
     [EnableCors(origins: "*", headers: "*", methods: "*")]
+    [RoutePrefix("api/Oresa")]
     public class MemSignupController : ApiController
     {
         MemSignup memsignup = new MemSignup();

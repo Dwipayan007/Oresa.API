@@ -33,3 +33,38 @@ C:\Users\LENOVO\documents\visual studio 2015\Projects\Oresa\oresa.API\bin\System
 C:\Users\LENOVO\documents\visual studio 2015\Projects\Oresa\oresa.API\obj\Debug\oresa.API.dll
 C:\Users\LENOVO\documents\visual studio 2015\Projects\Oresa\oresa.API\obj\Debug\oresa.API.pdb
 C:\Users\LENOVO\documents\visual studio 2015\Projects\Oresa\oresa.API\obj\Debug\oresa.API.csprojResolveAssemblyReference.cache
+D:\Projects\Oresa\Oresa.API\bin\roslyn\csc.exe
+D:\Projects\Oresa\Oresa.API\bin\roslyn\Microsoft.Build.Tasks.CodeAnalysis.dll
+D:\Projects\Oresa\Oresa.API\bin\roslyn\Microsoft.CodeAnalysis.CSharp.dll
+D:\Projects\Oresa\Oresa.API\bin\roslyn\Microsoft.CodeAnalysis.dll
+D:\Projects\Oresa\Oresa.API\bin\roslyn\Microsoft.CodeAnalysis.VisualBasic.dll
+D:\Projects\Oresa\Oresa.API\bin\roslyn\Microsoft.CSharp.Core.targets
+D:\Projects\Oresa\Oresa.API\bin\roslyn\Microsoft.VisualBasic.Core.targets
+D:\Projects\Oresa\Oresa.API\bin\roslyn\System.Collections.Immutable.dll
+D:\Projects\Oresa\Oresa.API\bin\roslyn\System.Reflection.Metadata.dll
+D:\Projects\Oresa\Oresa.API\bin\roslyn\vbc.exe
+D:\Projects\Oresa\Oresa.API\bin\roslyn\VBCSCompiler.exe
+D:\Projects\Oresa\Oresa.API\bin\roslyn\VBCSCompiler.exe.config
+D:\Projects\Oresa\Oresa.API\bin\oresa.API.dll.config
+D:\Projects\Oresa\Oresa.API\bin\oresa.API.dll
+D:\Projects\Oresa\Oresa.API\bin\oresa.API.pdb
+D:\Projects\Oresa\Oresa.API\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll
+D:\Projects\Oresa\Oresa.API\bin\MySql.Data.dll
+D:\Projects\Oresa\Oresa.API\bin\MySql.Web.dll
+D:\Projects\Oresa\Oresa.API\bin\Newtonsoft.Json.dll
+D:\Projects\Oresa\Oresa.API\bin\System.Net.Http.Formatting.dll
+D:\Projects\Oresa\Oresa.API\bin\System.Web.Cors.dll
+D:\Projects\Oresa\Oresa.API\bin\System.Web.Http.Cors.dll
+D:\Projects\Oresa\Oresa.API\bin\System.Web.Http.dll
+D:\Projects\Oresa\Oresa.API\bin\System.Web.Http.WebHost.dll
+D:\Projects\Oresa\Oresa.API\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.xml
+D:\Projects\Oresa\Oresa.API\bin\MySql.Data.xml
+D:\Projects\Oresa\Oresa.API\bin\MySql.Web.xml
+D:\Projects\Oresa\Oresa.API\bin\System.Web.Http.Cors.xml
+D:\Projects\Oresa\Oresa.API\bin\Newtonsoft.Json.xml
+D:\Projects\Oresa\Oresa.API\bin\System.Net.Http.Formatting.xml
+D:\Projects\Oresa\Oresa.API\bin\System.Web.Http.xml
+D:\Projects\Oresa\Oresa.API\bin\System.Web.Http.WebHost.xml
+D:\Projects\Oresa\Oresa.API\obj\Debug\oresa.API.csprojResolveAssemblyReference.cache
+D:\Projects\Oresa\Oresa.API\obj\Debug\oresa.API.dll
+D:\Projects\Oresa\Oresa.API\obj\Debug\oresa.API.pdb

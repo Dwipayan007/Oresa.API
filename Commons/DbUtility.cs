@@ -11,7 +11,6 @@ namespace oresa.API.Commons
 {
     public class DbUtility
     {
-
         public static bool CreateMemberShip(MembershipModel mSignup)
         {
             //MySqlCommand scmd = new  MySqlCommand();
@@ -50,6 +49,222 @@ namespace oresa.API.Commons
                 scmd.Parameters.AddWithValue("Category", mSignup.Category);
                 scmd.Parameters.AddWithValue("PriceRange", mSignup.PriceRange);
                 scmd.Parameters.AddWithValue("TermsCondition", mSignup.TermsCondition);
+                scmd.Prepare();
+                scmd.ExecuteNonQuery();
+                res = true;
+
+            }
+            catch (Exception ex)
+            {
+                res = false;
+            }
+            finally
+            {
+                if (scmd != null)
+                    scmd.Dispose();
+                if (scon.State == ConnectionState.Open)
+                {
+                    scon.Dispose();
+                    scon.Close();
+                }
+            }
+            return res;
+        }
+
+        public static bool SaveUpcoming(Dictionary<string, List<string>> myData, Dictionary<string, string> Mydata)
+        {
+            bool res = false;
+            MySqlCommand scmd = new MySqlCommand();
+            DbConnection dbInstance = new DbConnection();
+            MySqlConnection scon = dbInstance.OpenConnection();
+            //scon.Open();
+            scmd.Connection = scon;
+            try
+            {
+                //string id = scmd.LastInsertedId.ToString();
+                scmd.CommandText = "insert into ores.upcoming_projects(Owner_ID,Project_Name,Location,Project_Type,No_Of_Units,Project_Photo) value"
+                    + "(@Owner_ID, @Project_Name, @Location, @Project_Type, @No_Of_Units, @Project_Photo)";
+                foreach (KeyValuePair<string, List<string>> entry in myData)
+                {
+
+                    if (entry.Key == "img")
+                    {
+                        var a = entry.Value;
+                        foreach (var imgname in a)
+                        {
+                            scmd.Parameters.AddWithValue("Project_Photo", imgname);
+                            scmd.Parameters.AddWithValue("Owner_ID", Mydata["Membership_ID"]);
+                            scmd.Parameters.AddWithValue("Project_Name", Mydata["ProjectName"]);
+                            scmd.Parameters.AddWithValue("Location", Mydata["Location"]);
+                            scmd.Parameters.AddWithValue("Project_Type", Mydata["ProjectType"]);
+                            scmd.Parameters.AddWithValue("No_Of_Units", Mydata["noofunit"]);
+                            scmd.Prepare();
+                            scmd.ExecuteNonQuery();
+                            scmd.Parameters.Clear();
+                        }
+                    }
+                }
+                res = true;
+            }
+            catch (Exception ex)
+            {
+                res = false;
+            }
+            finally
+            {
+                if (scmd != null)
+                    scmd.Dispose();
+                if (scon.State == ConnectionState.Open)
+                {
+                    scon.Dispose();
+                    scon.Close();
+                }
+            }
+            return res;
+        }
+
+        public static DataTable GetMembershipData(Guid id)
+        {
+            MySqlCommand scmd = new MySqlCommand();
+            DbConnection dbInstance = new DbConnection();
+            MySqlConnection scon = dbInstance.OpenConnection();
+            DataTable dt = new DataTable();
+            scmd.Connection = scon;
+            try
+            {
+                scmd.CommandText = "SELECT Organisation_Name,Chairman_MD,Mailing_Address,Website,Company_Telephone_No FROM ores.membership where Membership_ID=@Membership_ID";
+                scmd.Parameters.AddWithValue("Membership_ID", id);
+                scmd.Prepare();
+                dt.Load(scmd.ExecuteReader());
+            }
+            catch (Exception ex)
+            {
+                //res = false;
+               
+            }
+            finally
+            {
+                if (scmd != null)
+                    scmd.Dispose();
+                if (scon.State == ConnectionState.Open)
+                {
+                    scon.Dispose();
+                    scon.Close();
+                }
+            }
+            return dt;
+        }
+
+        public static string GetUserId(string userName)
+        {
+            string memId = "";
+            bool res = false;
+            MySqlCommand scmd = new MySqlCommand();
+            DbConnection dbInstance = new DbConnection();
+            MySqlConnection scon = dbInstance.OpenConnection();
+            //scon.Open();
+            scmd.Connection = scon;
+            try
+            {
+                scmd.CommandText = "SELECT Membership_ID FROM ores.signup WHERE username=@username";
+                scmd.Parameters.AddWithValue("username", userName);
+                scmd.Prepare();
+                //memId= scmd.ExecuteNonQuery().ToString();
+                //res = true;
+
+                using (MySqlDataReader reader = scmd.ExecuteReader())
+                {
+                    if (reader.Read())
+                    {
+                        memId = reader["Membership_ID"].ToString();
+                    }
+                }
+
+            }
+            catch (Exception ex)
+            {
+                //res = false;
+                memId = "";
+            }
+            finally
+            {
+                if (scmd != null)
+                    scmd.Dispose();
+                if (scon.State == ConnectionState.Open)
+                {
+                    scon.Dispose();
+                    scon.Close();
+                }
+            }
+            return memId;
+        }
+
+        public static bool SaveMemberData(Dictionary<string, List<string>> myData, Dictionary<string, string> Mydata)
+        {
+            bool res = false;
+            MySqlCommand scmd = new MySqlCommand();
+            DbConnection dbInstance = new DbConnection();
+            MySqlConnection scon = dbInstance.OpenConnection();
+            //scon.Open();
+            scmd.Connection = scon;
+            try
+            {
+                //string id = scmd.LastInsertedId.ToString();
+                scmd.CommandText = "insert into ores.completed_projects(Owner_ID,Project_Name,Location,Project_Type,No_Of_Units,Project_Photo) value"
+                    + "(@Owner_ID, @Project_Name, @Location, @Project_Type, @No_Of_Units, @Project_Photo)";
+                foreach (KeyValuePair<string, List<string>> entry in myData)
+                {
+                    if (entry.Key == "img")
+                    {
+                        var a = entry.Value;
+                        foreach (var imgname in a)
+                        {
+                            scmd.Parameters.AddWithValue("Project_Photo", imgname);
+                            scmd.Parameters.AddWithValue("Owner_ID", Mydata["Membership_ID"]);
+                            scmd.Parameters.AddWithValue("Project_Name", Mydata["ProjectName"]);
+                            scmd.Parameters.AddWithValue("Location", Mydata["Location"]);
+                            scmd.Parameters.AddWithValue("Project_Type", Mydata["ProjectType"]);
+                            scmd.Parameters.AddWithValue("No_Of_Units", Mydata["noofunit"]);
+                            scmd.Prepare();
+                            scmd.ExecuteNonQuery();
+                            scmd.Parameters.Clear();
+                        }
+                    }
+                }
+                res = true;
+            }
+            catch (Exception ex)
+            {
+                res = false;
+            }
+            finally
+            {
+                if (scmd != null)
+                    scmd.Dispose();
+                if (scon.State == ConnectionState.Open)
+                {
+                    scon.Dispose();
+                    scon.Close();
+                }
+            }
+            return res;
+        }
+
+        public static bool UserLogin(MemberLogin memlogin)
+        {
+            //MySqlCommand scmd = new  MySqlCommand();
+            bool res = false;
+            MySqlCommand scmd = new MySqlCommand();
+            DbConnection dbInstance = new DbConnection();
+            MySqlConnection scon = dbInstance.OpenConnection();
+            //scon.Open();
+            scmd.Connection = scon;
+            try
+            {
+                scmd.CommandText = "SELECT * FROM ores.signup WHERE  usertype=@usertype and password=@password and username=@username";
+                scmd.Parameters.AddWithValue("usertype", memlogin.UserType);
+                scmd.Parameters.AddWithValue("password", memlogin.Password);
+                scmd.Parameters.AddWithValue("username", memlogin.UserName);
                 scmd.Prepare();
                 scmd.ExecuteNonQuery();
                 res = true;

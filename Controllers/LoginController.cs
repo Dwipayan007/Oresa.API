@@ -1,14 +1,20 @@
-﻿using System;
+﻿using oresa.API.Models;
+using oresa.API.Services;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Net;
 using System.Net.Http;
 using System.Web.Http;
+using System.Web.Http.Cors;
 
 namespace oresa.API.Controllers
 {
+    [EnableCors(origins: "*", headers: "*", methods: "*")]
     public class LoginController : ApiController
     {
+
+        MemLogin memloginService = new MemLogin();
         // GET: api/Login
         public IEnumerable<string> Get()
         {
@@ -22,8 +28,9 @@ namespace oresa.API.Controllers
         }
 
         // POST: api/Login
-        public void Post([FromBody]string value)
+        public string Post(MemberLogin memlogin)
         {
+            return memloginService.MemberLogin(memlogin);
         }
 
         // PUT: api/Login/5
