@@ -146,7 +146,6 @@ namespace oresa.API.Commons
                 }
                 sdr.Close();
                 sdr.Dispose();
-
             }
             catch (Exception ee)
             {
