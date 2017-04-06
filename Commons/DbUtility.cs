@@ -71,6 +71,161 @@ namespace oresa.API.Commons
             return res;
         }
 
+        public static object GetUpcomingProjects(Guid memID)
+        {
+            MySqlCommand scmd = new MySqlCommand();
+            DbConnection dbInstance = new DbConnection();
+            MySqlConnection scon = dbInstance.OpenConnection();
+            scmd.Connection = scon;
+            List<UpcomingProject> uproject = new List<UpcomingProject>();
+            try
+            {
+                scmd.CommandText = "SELECT * FROM ores.upcoming_projects where Membership_ID=@Membership_ID";
+                scmd.Parameters.AddWithValue("Membership_ID", memID);
+                scmd.Prepare();
+                MySqlDataReader sdr = scmd.ExecuteReader();
+                if (sdr.HasRows)
+                {
+                    while (sdr.Read())
+                    {
+                        UpcomingProject _uproject = new UpcomingProject();
+                        _uproject.Membership_Id = Convert.ToString(sdr.GetString("Membership_Id"));
+                        _uproject.Project_Name = Convert.ToString(sdr.GetString("Project_Name"));
+                        _uproject.Project_Type = sdr.GetString("Project_Type");
+                        _uproject.No_Of_Unit = Convert.ToInt32(sdr.GetString("No_Of_Units"));
+                        _uproject.Project_Photo = Convert.ToString(sdr.GetString("Project_Photo"));
+                        uproject.Add(_uproject);
+                    }
+                }
+                sdr.Close();
+                sdr.Dispose();
+
+            }
+            catch (Exception ee)
+            {
+
+            }
+            finally
+            {
+                if (scmd != null)
+                    scmd.Dispose();
+                if (scon.State == ConnectionState.Open)
+                {
+                    scon.Dispose();
+                    scon.Close();
+                }
+            }
+            return uproject;
+        }
+
+        public static List<CompletedProjectModel> GetCompletedProjects(Guid did)
+        {
+            MySqlCommand scmd = new MySqlCommand();
+            DbConnection dbInstance = new DbConnection();
+            MySqlConnection scon = dbInstance.OpenConnection();
+            scmd.Connection = scon;
+            List<CompletedProjectModel> cproject = new List<CompletedProjectModel>();
+            try
+            {
+                scmd.CommandText = "SELECT * FROM ores.completed_projects where Membership_ID=@Membership_ID";
+                scmd.Parameters.AddWithValue("Membership_ID", did);
+                scmd.Prepare();
+                MySqlDataReader sdr = scmd.ExecuteReader();
+                if (sdr.HasRows)
+                {
+                    while (sdr.Read())
+                    {
+                        CompletedProjectModel _cproject = new CompletedProjectModel();
+                        _cproject.Membership_Id = Convert.ToString(sdr.GetString("Membership_Id"));
+                        _cproject.Project_Name = Convert.ToString(sdr.GetString("Project_Name"));
+                        _cproject.Project_Type = sdr.GetString("Project_Type");
+                        _cproject.No_Of_Unit = Convert.ToInt32(sdr.GetString("No_Of_Units"));
+                        _cproject.Project_Photo = Convert.ToString(sdr.GetString("Project_Photo"));
+                        cproject.Add(_cproject);
+                    }
+                }
+                sdr.Close();
+                sdr.Dispose();
+
+            }
+            catch (Exception ee)
+            {
+
+            }
+            finally
+            {
+                if (scmd != null)
+                    scmd.Dispose();
+                if (scon.State == ConnectionState.Open)
+                {
+                    scon.Dispose();
+                    scon.Close();
+                }
+            }
+            return cproject;
+        }
+
+
+        public static List<MembershipModel> GetMemProfileData(Guid memID)
+        {
+            MySqlCommand scmd = new MySqlCommand();
+            DbConnection dbInstance = new DbConnection();
+            MySqlConnection scon = dbInstance.OpenConnection();
+            List<MembershipModel> memModel = new List<MembershipModel>();
+            scmd.Connection = scon;
+            try
+            {
+                scmd.CommandText = "select m.* from ores.membership m where m.Membership_ID=@Membership_ID";
+                scmd.Parameters.AddWithValue("Membership_ID", memID);
+                scmd.Prepare();
+                MySqlDataReader sdr = scmd.ExecuteReader();
+                if (sdr.HasRows)
+                {
+                    while (sdr.Read())
+                    {
+                        MembershipModel _memModel = new MembershipModel();
+                        _memModel.Membership_ID = Convert.ToString(sdr.GetString("Membership_ID"));
+                        _memModel.Enrollment_Type = Convert.ToString(sdr.GetString("Enrollment_Type"));
+                        _memModel.Mobile_No = Convert.ToInt32(sdr.GetString("Mobile_No"));
+                        _memModel.Organization = sdr.GetString("Organisation_Name");
+                        _memModel.Pan = Convert.ToString(sdr.GetString("Pan_No"));
+                        _memModel.ChairMan = Convert.ToString(sdr.GetString("Chairman_MD"));
+                        _memModel.Company_Telephone_No = Convert.ToInt32(sdr.GetString("Company_Telephone_No"));
+                        _memModel.Fax = Convert.ToInt32(sdr.GetString("Fax"));
+                        _memModel.Email = Convert.ToString(sdr.GetString("Email"));
+                        _memModel.TermsCondition = Convert.ToBoolean(sdr.GetString("TermsCondition"));
+                        _memModel.PriceRange = Convert.ToString(sdr.GetString("PriceRange"));
+                        _memModel.Category = Convert.ToString(sdr.GetString("Category"));
+                        _memModel.Repre_Desig = Convert.ToString(sdr.GetString("Repre_Desig"));
+                        _memModel.Repre_Email = Convert.ToString(sdr.GetString("Repre_Email"));
+                        _memModel.Repre_Mobile = Convert.ToInt32(sdr.GetString("Repre_Mobile"));
+                        _memModel.Repre_Name = Convert.ToString(sdr.GetString("Repre_Name"));
+                        _memModel.Website = Convert.ToString(sdr.GetString("Website"));
+                        _memModel.Mailing_Address = Convert.ToString(sdr.GetString("Mailing_Address"));
+                        memModel.Add(_memModel);
+                    }
+                }
+                sdr.Close();
+                sdr.Dispose();
+            }
+            catch (Exception ex)
+            {
+                //res = false;
+
+            }
+            finally
+            {
+                if (scmd != null)
+                    scmd.Dispose();
+                if (scon.State == ConnectionState.Open)
+                {
+                    scon.Dispose();
+                    scon.Close();
+                }
+            }
+            return memModel;
+        }
+
         public static bool SaveUpcoming(Dictionary<string, List<string>> myData, Dictionary<string, string> Mydata)
         {
             bool res = false;
@@ -140,7 +295,7 @@ namespace oresa.API.Commons
             catch (Exception ex)
             {
                 //res = false;
-               
+
             }
             finally
             {
