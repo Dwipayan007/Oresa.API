@@ -103,3 +103,38 @@ D:\Oresa\oresa.API\oresa.API\bin\System.Web.Http.WebHost.xml
 D:\Oresa\oresa.API\oresa.API\obj\Debug\oresa.API.dll
 D:\Oresa\oresa.API\oresa.API\obj\Debug\oresa.API.pdb
 D:\Oresa\oresa.API\oresa.API\obj\Debug\oresa.API.csprojResolveAssemblyReference.cache
+C:\Users\Daipayan\documents\visual studio 2015\Projects\Oresa\oresa.API\bin\roslyn\csc.exe
+C:\Users\Daipayan\documents\visual studio 2015\Projects\Oresa\oresa.API\bin\roslyn\Microsoft.Build.Tasks.CodeAnalysis.dll
+C:\Users\Daipayan\documents\visual studio 2015\Projects\Oresa\oresa.API\bin\roslyn\Microsoft.CodeAnalysis.CSharp.dll
+C:\Users\Daipayan\documents\visual studio 2015\Projects\Oresa\oresa.API\bin\roslyn\Microsoft.CodeAnalysis.dll
+C:\Users\Daipayan\documents\visual studio 2015\Projects\Oresa\oresa.API\bin\roslyn\Microsoft.CodeAnalysis.VisualBasic.dll
+C:\Users\Daipayan\documents\visual studio 2015\Projects\Oresa\oresa.API\bin\roslyn\Microsoft.CSharp.Core.targets
+C:\Users\Daipayan\documents\visual studio 2015\Projects\Oresa\oresa.API\bin\roslyn\Microsoft.VisualBasic.Core.targets
+C:\Users\Daipayan\documents\visual studio 2015\Projects\Oresa\oresa.API\bin\roslyn\System.Collections.Immutable.dll
+C:\Users\Daipayan\documents\visual studio 2015\Projects\Oresa\oresa.API\bin\roslyn\System.Reflection.Metadata.dll
+C:\Users\Daipayan\documents\visual studio 2015\Projects\Oresa\oresa.API\bin\roslyn\vbc.exe
+C:\Users\Daipayan\documents\visual studio 2015\Projects\Oresa\oresa.API\bin\roslyn\VBCSCompiler.exe
+C:\Users\Daipayan\documents\visual studio 2015\Projects\Oresa\oresa.API\bin\roslyn\VBCSCompiler.exe.config
+C:\Users\Daipayan\documents\visual studio 2015\Projects\Oresa\oresa.API\bin\oresa.API.dll.config
+C:\Users\Daipayan\documents\visual studio 2015\Projects\Oresa\oresa.API\bin\oresa.API.dll
+C:\Users\Daipayan\documents\visual studio 2015\Projects\Oresa\oresa.API\bin\oresa.API.pdb
+C:\Users\Daipayan\documents\visual studio 2015\Projects\Oresa\oresa.API\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll
+C:\Users\Daipayan\documents\visual studio 2015\Projects\Oresa\oresa.API\bin\MySql.Data.dll
+C:\Users\Daipayan\documents\visual studio 2015\Projects\Oresa\oresa.API\bin\MySql.Web.dll
+C:\Users\Daipayan\documents\visual studio 2015\Projects\Oresa\oresa.API\bin\Newtonsoft.Json.dll
+C:\Users\Daipayan\documents\visual studio 2015\Projects\Oresa\oresa.API\bin\System.Net.Http.Formatting.dll
+C:\Users\Daipayan\documents\visual studio 2015\Projects\Oresa\oresa.API\bin\System.Web.Cors.dll
+C:\Users\Daipayan\documents\visual studio 2015\Projects\Oresa\oresa.API\bin\System.Web.Http.Cors.dll
+C:\Users\Daipayan\documents\visual studio 2015\Projects\Oresa\oresa.API\bin\System.Web.Http.dll
+C:\Users\Daipayan\documents\visual studio 2015\Projects\Oresa\oresa.API\bin\System.Web.Http.WebHost.dll
+C:\Users\Daipayan\documents\visual studio 2015\Projects\Oresa\oresa.API\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.xml
+C:\Users\Daipayan\documents\visual studio 2015\Projects\Oresa\oresa.API\bin\MySql.Data.xml
+C:\Users\Daipayan\documents\visual studio 2015\Projects\Oresa\oresa.API\bin\MySql.Web.xml
+C:\Users\Daipayan\documents\visual studio 2015\Projects\Oresa\oresa.API\bin\System.Web.Http.Cors.xml
+C:\Users\Daipayan\documents\visual studio 2015\Projects\Oresa\oresa.API\bin\Newtonsoft.Json.xml
+C:\Users\Daipayan\documents\visual studio 2015\Projects\Oresa\oresa.API\bin\System.Net.Http.Formatting.xml
+C:\Users\Daipayan\documents\visual studio 2015\Projects\Oresa\oresa.API\bin\System.Web.Http.xml
+C:\Users\Daipayan\documents\visual studio 2015\Projects\Oresa\oresa.API\bin\System.Web.Http.WebHost.xml
+C:\Users\Daipayan\documents\visual studio 2015\Projects\Oresa\oresa.API\obj\Debug\oresa.API.csprojResolveAssemblyReference.cache
+C:\Users\Daipayan\documents\visual studio 2015\Projects\Oresa\oresa.API\obj\Debug\oresa.API.dll
+C:\Users\Daipayan\documents\visual studio 2015\Projects\Oresa\oresa.API\obj\Debug\oresa.API.pdb

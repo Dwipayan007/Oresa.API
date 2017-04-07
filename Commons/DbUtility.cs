@@ -80,7 +80,7 @@ namespace oresa.API.Commons
             List<UpcomingProject> uproject = new List<UpcomingProject>();
             try
             {
-                scmd.CommandText = "SELECT * FROM ores.upcoming_projects where Membership_ID=@Membership_ID";
+                scmd.CommandText = "SELECT * FROM liveodia_oresa.upcoming_projects where Membership_ID=@Membership_ID";
                 scmd.Parameters.AddWithValue("Membership_ID", memID);
                 scmd.Prepare();
                 MySqlDataReader sdr = scmd.ExecuteReader();
@@ -127,7 +127,7 @@ namespace oresa.API.Commons
             List<CompletedProjectModel> cproject = new List<CompletedProjectModel>();
             try
             {
-                scmd.CommandText = "SELECT * FROM ores.completed_projects where Membership_ID=@Membership_ID";
+                scmd.CommandText = "SELECT * FROM liveodia_oresa.completed_projects where Membership_ID=@Membership_ID";
                 scmd.Parameters.AddWithValue("Membership_ID", did);
                 scmd.Prepare();
                 MySqlDataReader sdr = scmd.ExecuteReader();
@@ -174,7 +174,7 @@ namespace oresa.API.Commons
             scmd.Connection = scon;
             try
             {
-                scmd.CommandText = "select m.* from ores.membership m where m.Membership_ID=@Membership_ID";
+                scmd.CommandText = "select m.* from liveodia_oresa.membership m where m.Membership_ID=@Membership_ID";
                 scmd.Parameters.AddWithValue("Membership_ID", memID);
                 scmd.Prepare();
                 MySqlDataReader sdr = scmd.ExecuteReader();
@@ -236,7 +236,7 @@ namespace oresa.API.Commons
             try
             {
                 //string id = scmd.LastInsertedId.ToString();
-                scmd.CommandText = "insert into ores.upcoming_projects(Owner_ID,Project_Name,Location,Project_Type,No_Of_Units,Project_Photo) value"
+                scmd.CommandText = "insert into liveodia_oresa.upcoming_projects(Owner_ID,Project_Name,Location,Project_Type,No_Of_Units,Project_Photo) value"
                     + "(@Owner_ID, @Project_Name, @Location, @Project_Type, @No_Of_Units, @Project_Photo)";
                 foreach (KeyValuePair<string, List<string>> entry in myData)
                 {
@@ -286,7 +286,7 @@ namespace oresa.API.Commons
             scmd.Connection = scon;
             try
             {
-                scmd.CommandText = "SELECT Organisation_Name,Chairman_MD,Mailing_Address,Website,Company_Telephone_No FROM ores.membership where Membership_ID=@Membership_ID";
+                scmd.CommandText = "SELECT Organisation_Name,Chairman_MD,Mailing_Address,Website,Company_Telephone_No FROM liveodia_oresa.membership where Membership_ID=@Membership_ID";
                 scmd.Parameters.AddWithValue("Membership_ID", id);
                 scmd.Prepare();
                 dt.Load(scmd.ExecuteReader());
@@ -320,7 +320,7 @@ namespace oresa.API.Commons
             scmd.Connection = scon;
             try
             {
-                scmd.CommandText = "SELECT Membership_ID FROM ores.signup WHERE username=@username";
+                scmd.CommandText = "SELECT Membership_ID FROM liveodia_oresa.signup WHERE username=@username";
                 scmd.Parameters.AddWithValue("username", userName);
                 scmd.Prepare();
                 //memId= scmd.ExecuteNonQuery().ToString();
@@ -364,7 +364,7 @@ namespace oresa.API.Commons
             try
             {
                 //string id = scmd.LastInsertedId.ToString();
-                scmd.CommandText = "insert into ores.completed_projects(Owner_ID,Project_Name,Location,Project_Type,No_Of_Units,Project_Photo) value"
+                scmd.CommandText = "insert into liveodia_oresa.completed_projects(Owner_ID,Project_Name,Location,Project_Type,No_Of_Units,Project_Photo) value"
                     + "(@Owner_ID, @Project_Name, @Location, @Project_Type, @No_Of_Units, @Project_Photo)";
                 foreach (KeyValuePair<string, List<string>> entry in myData)
                 {
@@ -415,7 +415,7 @@ namespace oresa.API.Commons
             scmd.Connection = scon;
             try
             {
-                scmd.CommandText = "SELECT * FROM ores.signup WHERE  usertype=@usertype and password=@password and username=@username";
+                scmd.CommandText = "SELECT * FROM liveodia_oresa.signup WHERE  usertype=@usertype and password=@password and username=@username";
                 scmd.Parameters.AddWithValue("usertype", memlogin.UserType);
                 scmd.Parameters.AddWithValue("password", memlogin.Password);
                 scmd.Parameters.AddWithValue("username", memlogin.UserName);
